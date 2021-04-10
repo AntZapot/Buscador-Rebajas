@@ -5,15 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador de rebajas</title>
-    <link rel="stylesheet" href="sass/style.scss">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-
-        <!-- Div contenedor 1 -->
         <div class="contenedor">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae nisi velit architecto omnis sint repellat illo eum reiciendis nostrum, at numquam natus ratione expedita harum porro. Minus reiciendis blanditiis earum.</p>
+            <h2>Busca rebajas en tus juegos favoritos</h2>
+            <form class="buscador">
+                <input 
+                    type="text" 
+                    id="busqueda" 
+                    placeholder="Busca tu juego favorito" 
+                    class="input-texto"
+                >
+                <button 
+                    type="submit"
+                    class="boton-submit" 
+                    id="boton-buscar"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+            </form>
         </div>
     </header>
+    <main>
+        <div class="ordenar">
+            <select 
+                name="ordenar" 
+                id="ordernar"
+            >
+                <option value="Alfabetico A-Z"></option>
+                <option value="Alfabetico Z-A"></option>
+                <option value="Menor precio"></option>
+                <option value="Mayor precio"></option>
+
+            </select>
+        </div>
+        <div class="resultados">
+            <div class="card">
+                <img src="https://steamcdn-a.akamaihd.net/steam/apps/496620/capsule_sm_120.jpg?t=1533784859" alt="Imagen juego">
+                <div class="texto-card">
+                    <h2>Monster Slayers</h2>
+                    <div class="metacritic">
+                        <h2>9.0</h2>
+                        <img src="img/star.png" alt="Imagen Juego">
+                    </div>
+                    <h2>Tienda: Steam</h2>
+                    <p>Precio normal: 20</p>
+                    <p>Precio oferta: 15</p>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
