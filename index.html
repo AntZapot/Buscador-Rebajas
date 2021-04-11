@@ -16,7 +16,7 @@
     <header>
         <div class="contenedor">
             <h2>Busca rebajas en tus juegos favoritos</h2>
-            <form class="buscador">
+            <form class="buscador" id="formulario">
                 <input 
                     type="text" 
                     id="busqueda" 
@@ -41,28 +41,34 @@
                 name="ordenar" 
                 id="ordernar"
             >
-                <option value="Alfabetico A-Z"></option>
-                <option value="Alfabetico Z-A"></option>
-                <option value="Menor precio"></option>
-                <option value="Mayor precio"></option>
+                <option value="">Alfabetico A-Z</option>
+                <option value="">Alfabetico Z-A</option>
+                <option value="">Menor precio</option>
+                <option value="">Mayor precio</option>
+                <option value="Metacritic">Metacritic</option>
 
             </select>
         </div>
-        <div class="resultados">
-            <div class="card">
-                <img src="https://steamcdn-a.akamaihd.net/steam/apps/496620/capsule_sm_120.jpg?t=1533784859" alt="Imagen juego">
-                <div class="texto-card">
-                    <h2>Monster Slayers</h2>
-                    <div class="metacritic">
-                        <h2>9.0</h2>
-                        <img src="img/star.png" alt="Imagen Juego">
-                    </div>
-                    <h2>Tienda: Steam</h2>
-                    <p>Precio normal: 20</p>
-                    <p>Precio oferta: 15</p>
-                </div>
-            </div>
+        <div class="resultados" id="resultados">
         </div>
     </main>
+    <template id="template">
+        <div class="card">
+            <img src="" alt="Imagen juego">
+            <div class="texto-card">
+                <h2 id="titulo">Monster Slayers</h2>
+                <div class="metacritic">
+                    <h2 id="metacritic">9.0</h2>
+                    <img src="img/star.png" alt="Imagen Juego">
+                </div>
+                <h2>Tienda: Steam</h2>
+                <p id="precio-normal">Precio normal: 20</p>
+                <p id="precio-oferta">Precio oferta: 15</p>
+                <a href="#" id="ver-mas">Ver mas...</a>
+            </div>
+        </div>
+    </template>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

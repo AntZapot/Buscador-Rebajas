@@ -54,7 +54,18 @@ header .contenedor .buscador .boton-submit svg {
   width: 100%;
 }
 
+/* Select DIV */
+.ordenar {
+  display: block;
+  padding: 7px 15px 0px 10px;
+}
 
+.ordenar select{
+  width: 40%;
+  font-size: .7rem;
+  outline: none;
+
+}
 
 /* Resultados */
 .resultados {
@@ -62,17 +73,20 @@ header .contenedor .buscador .boton-submit svg {
   justify-content: start;
   width: 100%;
   padding: 20px 10px;
+  flex-wrap: wrap;
 }
 
 .resultados .card {
   width: 45%;
   min-height: 100px;
   background-color: #BFC8C6;
+  margin-right: 10px;
+  margin-bottom: 20px;
 }
 
 .resultados .card img {
   width: 100%;
-  height: 40px;
+  height: 50px;
 }
 
 .resultados .card .texto-card {
@@ -95,4 +109,100 @@ header .contenedor .buscador .boton-submit svg {
 .resultados .card .metacritic img {
   width: 15px;
   height: 15px;
+}
+
+.resultados .card a {
+  margin-top: 7px;
+  font-size: .8rem;
+  padding: 3px;
+  background: rgb(42, 93, 233);
+  display: block;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 280px) {
+  .ordenar{
+    padding-left: 15px;
+  }
+
+  .resultados {
+    justify-content: center;
+  }
+
+  .resultados .card {
+    width: 89%;
+  }
+}
+
+@media (min-width: 580px){
+  .ordenar{
+    padding-left: 20px;
+  }
+
+  .resultados {
+    padding: 10px 20px 10px 20px;
+  }
+
+  .resultados .card {
+    width: 31.5%;
+  }
+
+  .resultados .card img {
+    height: 65px;
+  }
+
+}
+
+@media (min-width: 980px){
+  .resultados {
+    padding: 15px 20px 15px 20px;
+  }
+
+  .resultados .card {
+    width: 23.5%;
+    
+  }
+}
+
+@media (min-width: 1040px){
+  header .contenedor .buscador {
+    width: 60%;
+    height: 60px;
+  }
+
+  header .contenedor .buscador .input-texto{
+    font-size: 1.1rem;
+  }
+
+  .ordenar select{
+    width: 15%;
+    font-size: 1rem;
+  }
+
+  .resultados {
+    padding: 15px 20px 15px 20px;
+  }
+
+  .resultados .card {
+    width: 19%;
+  }
+
+  .resultados .card img {
+    height: 90px;
+  }
+
+  .resultados .card h2{ 
+    font-size: 1.2rem;
+  }
+
+  .resultados .card p {
+    font-size: .9rem;
+  }
+
+  .resultados .card a {
+    font-size: 1rem;
+  }
 }
