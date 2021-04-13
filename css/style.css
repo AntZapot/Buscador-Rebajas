@@ -7,6 +7,7 @@
 html {
   font-size: 16px;
   font-family: Poppins, Arial, Helvetica, sans-serif;
+  width: fit-content;
 }
 
 /* Header */
@@ -47,6 +48,15 @@ header .contenedor .buscador .boton-submit {
   height: 30px;
   font-size: 1rem;
   text-align: center;
+  background-color: rgb(43, 153, 116);
+  border: none;
+  outline: none;
+  transition: .3s ease;
+  color: #FFFFFF;
+}
+
+header .contenedor .buscador .boton-submit:hover {
+  background-color: rgba(43, 153, 116, 0.801);
 }
 
 header .contenedor .buscador .boton-submit svg {
@@ -54,47 +64,102 @@ header .contenedor .buscador .boton-submit svg {
   width: 100%;
 }
 
-/* Select DIV */
-.ordenar {
-  display: block;
-  padding: 7px 15px 0px 10px;
+/* filtos DIV */
+.filtros {
+  width: 100%;
+  padding: 10px 5px 0px 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.ordenar select{
-  width: 40%;
+.filtros select{
+  width: 35%;
+  font-size: 1rem;
+  outline: none;
+  height: 27px;
+  max-width: 150px;
+}
+
+.filtros .rango-precio {
+  width: 60%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.filtros .rango-precio input{
   font-size: .7rem;
   outline: none;
-
+  height: 27px;
+  width: 30%;
+  margin: 2px;
+  max-width: 100px;
+  padding: 3px;
 }
+
+.filtros .rango-precio button{
+  width: 30%;
+  height: 27px;
+  font-size: .7rem;
+  margin-right: 10px;
+  max-width: 70px;
+  outline: none;
+  background-color: rgba(49, 101, 212, 0.938);
+  border: none;
+  color: #FFFFFF;
+  transition: .3s ease;
+}
+
+.filtros .rango-precio button:hover {
+  background-color: rgba(65, 114, 221, 0.726)
+}
+
 
 /* Resultados */
 .resultados {
   display: flex;
-  justify-content: start;
+  justify-content: center;
   width: 100%;
   padding: 20px 10px;
   flex-wrap: wrap;
 }
 
+.alerta{
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid rgb(167, 30, 30);
+  padding: 25px;
+  background-color: rgba(233, 127, 127, 0.479);
+  color: #030303;
+  font-weight: 400;
+}
+
 .resultados .card {
   width: 45%;
-  min-height: 100px;
   background-color: #BFC8C6;
-  margin-right: 10px;
-  margin-bottom: 20px;
+  margin: 10px 5px;
+  height: fit-content;
 }
 
 .resultados .card img {
   width: 100%;
-  height: 50px;
+  height: 60px;
 }
 
 .resultados .card .texto-card {
   padding: 0px 5px 5px 5px;
 }
 
+.resultados .card #titulo {
+  font-weight: 700;
+}
+
 .resultados .card h2{ 
   font-size: .9rem;
+  font-weight: 500;
 }
 .resultados .card .metacritic{
   display: flex;
@@ -122,12 +187,46 @@ header .contenedor .buscador .boton-submit svg {
   text-align: center;
 }
 
+.paginador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.paginador .pagina {
+  background: rgb(17, 155, 109);
+  width: fit-content;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: .3s ease;
+  margin-bottom: 20px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.paginador .pagina:hover{
+  background: rgba(17, 155, 109, 0.822);
+  transform: scale(1.1);
+}
+
 /* Responsive */
 @media (max-width: 280px) {
-  .ordenar{
-    padding-left: 15px;
+
+   select{
+    font-size: .7rem;
+    width: 25%;
   }
 
+  .filtros .rango-precio {
+    width: 65%;
+  }
+  
   .resultados {
     justify-content: center;
   }
@@ -138,8 +237,16 @@ header .contenedor .buscador .boton-submit svg {
 }
 
 @media (min-width: 580px){
-  .ordenar{
-    padding-left: 20px;
+  .filtros{
+    justify-content: space-evenly;
+  }
+
+  .filtros .rango-precio input {
+    margin: 7px;
+  }
+
+  .filtros .rango-precio button{
+    font-size: .9rem;
   }
 
   .resultados {
@@ -163,7 +270,6 @@ header .contenedor .buscador .boton-submit svg {
 
   .resultados .card {
     width: 23.5%;
-    
   }
 }
 
@@ -204,5 +310,60 @@ header .contenedor .buscador .boton-submit svg {
 
   .resultados .card a {
     font-size: 1rem;
+  }
+}
+
+
+/* Spinner estilos */
+.spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
   }
 }
